@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  /* Layout */
+  --mobil-width: 375px;
+  --desktop-width: 1440px;
+
+  /* Colors */
+  /* Primary */
+  --tomato: hsl(4, 100%, 67%);
+
+  /* Neutral */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+
+  /* paragrapgh */
+  --par-16: 1rem;
+
+  /* Fonts family */
+  --roboto: 'Roboto', sans-serif;
+
+  /* Fonts weight */
+  --body-400: 400;
+  --header-700: 700
+}
+
+*, *::before, *::after {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--roboto);
+  background-color: var(--charcoal-grey);
+  
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  color: var(--charcoal-grey);
+  font-size: var(--par-16);
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.45rem;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  margin: 0.63rem 0;
+}
+
+ul li::before {
+  content:url("/assets/images/icon-list.svg") ;
+  padding-right: 1.25rem;
+}
+
+
+#hero-container {
+  background-color: var(--white);
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 40px;
+}
+
+#hero-container div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  padding: 3rem 3.75rem;
+  padding-left: calc(3.75rem - 1.5rem);
+  width: 470px;
+}
+
+/* form submit */
+#email-submit {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: flex-end;
+  align-items: flex-start;
+
+}
+
+#email-submit label{
+  font-size: small;
+  font-weight: var(--header-700);
+}
+
+#email-submit input {
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--grey);
+  margin: 10px 0;
+
+  width: 100%;
+}
+
+
+#email-submit button {
+  color: var(--white);
+  background-color: var(--charcoal-grey);
+
+  font-family: var(--roboto);
+  font-weight: var(--header-700);
+
+  margin-top: 15px;
+  padding: 15px 0;
+  width: 100%;
+
+  border: 1px solid var(--charcoal-grey);
+  border-radius: 5px;
+}
