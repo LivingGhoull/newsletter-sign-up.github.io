@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
   /* Layout */
@@ -9,7 +9,7 @@
   /* Primary */
   --tomato: #ff6257;
   --strawbarry: hsl(351, 100%, 67%);
-  
+
   /* Neutral */
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
@@ -20,16 +20,18 @@
   --par-16: 1rem;
 
   /* Fonts family */
-  --roboto: 'Roboto', sans-serif;
+  --roboto: "Roboto", sans-serif;
 
   /* Fonts weight */
   --body-400: 400;
-  --header-700: 700
+  --header-700: 700;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   /* Reset parts of elements */
-  box-sizing: border-box; 
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -37,7 +39,7 @@
 body {
   font-family: var(--roboto);
   background-color: var(--charcoal-grey);
-  
+
   /* Center the design */
   display: grid;
   place-items: center;
@@ -45,14 +47,15 @@ body {
 
   color: var(--charcoal-grey);
   font-size: var(--par-16);
-  
+
   margin: 0;
 }
 
 h1 {
-  font-size: 3.45rem;
+  /* font-size: 3.45rem; */
+  font-size: clamp(2.5rem, 2vw + 1rem, 3.45rem);
+  margin-bottom: 1rem;
 }
-
 
 /* Bullet points */
 ul {
@@ -60,7 +63,7 @@ ul {
 }
 
 ul li {
-/* Center text so its not on the ground or roof */
+  /* Center text so its not on the ground or roof */
   display: flex;
   align-items: center;
 
@@ -69,15 +72,16 @@ ul li {
 
 ul li::before {
   /* Felx is the best ducktape that exist */
- content: url("/assets/images/icon-list.svg");
- display: flex;
- margin-right: 1rem;
+  content: url("/assets/images/icon-list.svg");
+  display: flex;
+  margin-right: 1rem;
 }
 /* ... */
 
 #hero-container {
   background-color: var(--white);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   padding: 1.5rem;
   border-radius: 40px;
 }
@@ -89,21 +93,33 @@ ul li::before {
 
   padding: 3rem 3.75rem;
   padding-left: calc(3.75rem - 1.5rem);
-  width: 470px;
+  /* max-width: 29.4rem; */
+  min-width: 21.5rem;
+}
+
+#img-holder {
+  display: flex;
+}
+
+#mobile-img { 
+  display: none;
+}
+
+img {
+  margin: auto;
 }
 
 /* form submit */
 #email-submit {
   display: flex;
   flex-direction: column;
-  
+
   justify-content: flex-end;
   align-items: flex-start;
-
 }
 
-#email-submit label{
-  font-size: small;
+#email-submit label {
+  font-size: var(--par-16);
   font-weight: var(--header-700);
 }
 
@@ -116,11 +132,11 @@ ul li::before {
   width: 100%;
 }
 
-#email-submit input:focus, #email-submit input:hover {
+#email-submit input:focus,
+#email-submit input:hover {
   border: 1px solid var(--dark-slate-grey);
   outline: none;
 }
-
 
 #email-submit button {
   color: var(--white);
@@ -138,11 +154,51 @@ ul li::before {
 
   cursor: pointer;
   transition: color 250ms ease;
-
 }
 
 #email-submit button:hover {
-  background: linear-gradient(90deg, rgba(255,87,112,1) 0%, rgba(255,98,87,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 87, 112, 1) 0%,
+    rgba(255, 98, 87, 1) 100%
+  );
   border-color: hsla(0, 0%, 100%, 0);
   box-shadow: 0px 10px 30px 5px var(--tomato);
+}
+
+
+
+@media (max-width: 376px) {
+  body {
+    background-color: var(--white);
+    place-items: none;
+    height: 0;
+  }
+
+  #hero-container {
+    grid-template-columns: auto;
+    padding: 0;
+  }
+
+  #hero-container div:first-child {
+    padding: 2rem;
+  }
+
+  #hero-container #img-holder {
+    grid-row: 1 / 2;
+  }
+
+  #email-submit {
+    margin-top: 1rem;
+  }
+  
+
+  #desktop-img { 
+    display: none;
+  }
+
+  #mobile-img {
+    display: block;
+  }
+  
 }
