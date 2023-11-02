@@ -114,6 +114,8 @@ img {
   display: flex;
   flex-direction: column;
 
+  margin-top: 1rem;
+
   justify-content: flex-end;
   align-items: flex-start;
 }
@@ -181,15 +183,11 @@ img {
   }
 
   #hero-container div:first-child {
-    padding: 2rem;
+    padding: 2rem 2rem;
   }
 
   #hero-container #img-holder {
     grid-row: 1 / 2;
-  }
-
-  #email-submit {
-    margin-top: 1rem;
   }
   
 
