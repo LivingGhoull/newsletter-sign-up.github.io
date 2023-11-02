@@ -16,6 +16,9 @@
   --grey: hsl(231, 7%, 60%);
   --white: hsl(0, 0%, 100%);
 
+  /* error colors */
+  --err-color-300: hsl(5, 100%, 95%);
+
   /* paragrapgh */
   --par-16: 1rem;
 
@@ -78,6 +81,7 @@ ul li::before {
 }
 /* ... */
 
+/* Here section */
 #hero-container {
   background-color: var(--white);
   display: grid;
@@ -86,17 +90,17 @@ ul li::before {
   border-radius: 40px;
 }
 
-#hero-container div:first-child {
+#hero-container > div:first-child {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
   padding: 3rem 3.75rem;
   padding-left: calc(3.75rem - 1.5rem);
-  /* max-width: 29.4rem; */
-  min-width: 21.5rem;
 }
+/* ... */
 
+/* Img for desktop and mobile */
 #img-holder {
   display: flex;
 }
@@ -108,6 +112,8 @@ ul li::before {
 img {
   margin: auto;
 }
+/* ... */
+
 
 /* form submit */
 #email-submit {
@@ -120,9 +126,29 @@ img {
   align-items: flex-start;
 }
 
+#email-submit > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+#email-submit .label-error {
+  display: none;
+  color: var(--tomato);
+}
+
 #email-submit label {
   font-size: var(--par-16);
   font-weight: var(--header-700);
+}
+
+
+#email-submit input#email.email-error {
+  background-color: var(--err-color-300);
+  border-color: var(--tomato);
+  color: var(--tomato);
 }
 
 #email-submit input {
@@ -151,7 +177,7 @@ img {
   padding: 1rem 0;
   width: 100%;
 
-  border: 1px solid var(--charcoal-grey);
+  border: 0;
   border-radius: 5px;
 
   cursor: pointer;
@@ -159,18 +185,21 @@ img {
 }
 
 #email-submit button:hover {
+  background: var(--dark-slate-grey);
+  border: none;
+}
+
+#email-submit button:active {
   background: linear-gradient(
     90deg,
     rgba(255, 87, 112, 1) 0%,
     rgba(255, 98, 87, 1) 100%
   );
-  border-color: hsla(0, 0%, 100%, 0);
   box-shadow: 0px 10px 30px 5px var(--tomato);
 }
+/* ... */
 
-
-
-@media (max-width: 376px) {
+@media (max-width: 23.5em) {
   body {
     background-color: var(--white);
     place-items: none;
