@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  /* Layout */
+  --mobil-width: 375px;
+  --desktop-width: 1440px;
+
+  /* Colors */
+  /* Primary */
+  --tomato: #ff6257;
+  --strawbarry: hsl(351, 100%, 67%);
+
+  /* Neutral */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+
+  /* error colors */
+  --err-color-300: hsl(5, 100%, 95%);
+
+  /* paragrapgh */
+  --par-16: 1rem;
+
+  /* Fonts family */
+  --roboto: "Roboto", sans-serif;
+
+  /* Fonts weight */
+  --body-400: 400;
+  --header-700: 700;
+}
+
+*,
+*::before,
+*::after {
+  /* Reset parts of elements */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--roboto);
+  background-color: var(--charcoal-grey);
+
+  /* Center the design */
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  color: var(--charcoal-grey);
+  font-size: var(--par-16);
+
+  margin: 0;
+}
+
+
+h1 {
+  /* font-size: 3.45rem; */
+  font-size: clamp(2.5rem, 2vw + 1rem, 3.45rem);
+  margin-bottom: 1rem;
+}
+
+#succ-messege {
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2.5rem;
+  border-radius: 40px;
+  width: min(400px, 100%);
+  margin-inline: auto;
+
+}
+
+#succ-messege button {
+  color: var(--white);
+  background-color: var(--charcoal-grey);
+
+  font-family: var(--roboto);
+  font-weight: var(--header-700);
+
+  margin-top: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+
+  border: 0;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: color 250ms ease;
+}
+
+
+#succ-messege button:hover {
+  background: var(--dark-slate-grey);
+  border: none;
+}
+
+#succ-messege button:active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 87, 112, 1) 0%,
+    rgba(255, 98, 87, 1) 100%
+  );
+  box-shadow: 0px 10px 30px 5px var(--tomato);
+}
+
+@media (max-width: 23.5em) {
+  body {
+    background-color: #ffffff;
+  }
+}

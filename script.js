@@ -15,3 +15,7 @@ function SubmitEmail(event) {
 
   window.location.href = '/success.html';
 }
+
+function dismiss() {
+  window.location.href = '/';
+}
