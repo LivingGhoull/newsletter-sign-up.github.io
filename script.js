@@ -13,9 +13,9 @@ function SubmitEmail(event) {
     return
   }
 
-  window.location.href = '/success.html';
+  window.location.href = '/newsletter-sign-up.github.io/success.html';
 }
 
 function dismiss() {
-  window.location.href = '/';
+  window.location.href = '/newsletter-sign-up.github.io/';
 }
