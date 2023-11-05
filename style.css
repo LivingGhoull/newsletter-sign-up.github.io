@@ -75,7 +75,7 @@ ul li {
 
 ul li::before {
   /* Felx is the best ducktape that exist */
-  content: url("/assets/images/icon-list.svg");
+  content: url("/newsletter-sign-up.github.io/assets/images/icon-list.svg");
   display: flex;
   margin-right: 1rem;
 }
